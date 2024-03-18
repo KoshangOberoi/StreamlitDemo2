@@ -1,0 +1,7 @@
+opencv-python
+protobuf
+tensorflow
+keras
+av
+streamlit_webrtc
+dlib-bin
