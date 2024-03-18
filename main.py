@@ -29,7 +29,7 @@ gaze = GazeTracking()
 
 lbl=['Close','Open']
 
-model = load_model('cnncat2.h5')
+model = load_model('cnnCat2.h5')
 path = os.getcwd()
 cap = cv2.VideoCapture(0)
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
