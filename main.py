@@ -8,7 +8,7 @@ import cv2
 import os
 from keras.models import load_model
 import numpy as np
-from pygame import mixer
+# from pygame import mixer
 import time
 from gaze_tracking import GazeTracking
 import math
@@ -17,8 +17,8 @@ from face_landmarks import get_landmark_model, detect_marks, draw_marks
 from streamlit_webrtc import webrtc_streamer
 import av
 
-mixer.init()
-sound = mixer.Sound('alarm.wav')
+# mixer.init()
+# sound = mixer.Sound('alarm.wav')
 
 
 face = cv2.CascadeClassifier('haar cascade files\haarcascade_frontalface_alt.xml')
@@ -29,7 +29,7 @@ gaze = GazeTracking()
 
 lbl=['Close','Open']
 
-model = load_model('models/cnncat2.h5')
+model = load_model('cnncat2.h5')
 path = os.getcwd()
 cap = cv2.VideoCapture(0)
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
@@ -280,7 +280,8 @@ class VideoProcessor:
             #person is feeling sleepy so we beep the alarm
             cv2.imwrite(os.path.join(path,'image.jpg'),frm)
             try:
-                sound.play()
+                # sound.play()
+                print("uwu")
                 
             except:  # isplaying = False
                 pass
