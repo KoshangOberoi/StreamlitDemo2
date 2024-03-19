@@ -6,7 +6,7 @@ Created on Fri Jul 31 01:04:44 2020
 """
 import cv2
 import os
-from keras.models import load_model
+from keras.saving import load_model
 import numpy as np
 # from pygame import mixer
 import time
