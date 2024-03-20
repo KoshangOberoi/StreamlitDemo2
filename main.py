@@ -36,8 +36,7 @@ font = cv2.FONT_HERSHEY_COMPLEX_SMALL
 count=0
 score=0
 thicc=2
-rpred=[99]
-lpred=[99]
+
 
 def get_2d_points(img, rotation_vector, translation_vector, camera_matrix, val):
     """Return the 3D points present as 2D for making annotation box"""
@@ -200,6 +199,8 @@ class VideoProcessor:
         # ret, frame = cap.read()
         # size = frame.shape
         # Camera internals
+        rpred=[99]
+        lpred=[99]
         focal_length = frame.width
         center = (frame.width/2, frame.height/2)
         camera_matrix = np.array(
