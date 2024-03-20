@@ -198,10 +198,10 @@ model_points = np.array([
 class VideoProcessor:
     def recv(self,frame):
         # ret, frame = cap.read()
-        size = frame.shape
+        # size = frame.shape
         # Camera internals
-        focal_length = size[1]
-        center = (size[1]/2, size[0]/2)
+        focal_length = frame.width
+        center = (frame.width/2, frame.height/2)
         camera_matrix = np.array(
                                  [[focal_length, 0, center[0]],
                                  [0, focal_length, center[1]],
