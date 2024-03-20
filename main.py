@@ -16,7 +16,7 @@ from face_detector import get_face_detector, find_faces
 from face_landmarks import get_landmark_model, detect_marks, draw_marks
 from streamlit_webrtc import webrtc_streamer
 import av
-
+count = 0
 # mixer.init()
 # sound = mixer.Sound('alarm.wav')
 
@@ -33,7 +33,6 @@ model = load_model('cnnCat2.h5', compile=False)
 path = os.getcwd()
 cap = cv2.VideoCapture(0)
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
-count=0
 score=0
 thicc=2
 
