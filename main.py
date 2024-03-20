@@ -160,8 +160,8 @@ d_outer = [0]*5
 inner_points = [[61, 67], [62, 66], [63, 65]]
 d_inner = [0]*3
 
-ret, frame = cap.read()
-size = frame.shape
+# ret, frame = cap.read()
+
 font = cv2.FONT_HERSHEY_SIMPLEX 
 # 3D model points.
 model_points = np.array([
@@ -173,14 +173,7 @@ model_points = np.array([
                             (150.0, -150.0, -125.0)      # Right mouth corner
                         ])
 
-# Camera internals
-focal_length = size[1]
-center = (size[1]/2, size[0]/2)
-camera_matrix = np.array(
-                         [[focal_length, 0, center[0]],
-                         [0, focal_length, center[1]],
-                         [0, 0, 1]], dtype = "double"
-                         )
+
 
 # while(True):
 #     ret, frame = cap.read()
@@ -205,6 +198,15 @@ camera_matrix = np.array(
 class VideoProcessor:
     def recv(self,frame):
         # ret, frame = cap.read()
+        size = frame.shape
+        # Camera internals
+        focal_length = size[1]
+        center = (size[1]/2, size[0]/2)
+        camera_matrix = np.array(
+                                 [[focal_length, 0, center[0]],
+                                 [0, focal_length, center[1]],
+                                 [0, 0, 1]], dtype = "double"
+                                 )
         frm = frame.to_ndarray(format="bgr24")
         height,width = frm.shape[:2] 
 
